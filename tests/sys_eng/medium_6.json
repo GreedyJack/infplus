@@ -1,0 +1,12 @@
+{
+	"question":"medium_6",
+	"id":"medium_6",
+	"difficulty":"2",
+	"type":"radio",
+	"answers":[
+		{"text":"1", "id":"0", "result":"0"},
+		{"text":"2", "id":"1", "result":"0"},
+		{"text":"++", "id":"2", "result":"1"},
+		{"text":"4", "id":"3", "result":"0"}
+	]
+}

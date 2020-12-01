@@ -1,0 +1,12 @@
+{
+	"question":"easy_9",
+	"id":"easy_9",
+	"difficulty":"1",
+	"type":"radio",
+	"answers":[
+		{"text":"Правильно", "id":"0", "result":"1"},
+		{"text":"2", "id":"1", "result":"0"},
+		{"text":"3", "id":"2", "result":"0"},
+		{"text":"4", "id":"3", "result":"0"}
+	]
+}

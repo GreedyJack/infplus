@@ -1,0 +1,9 @@
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Тесты</title>
+</head>
+<body>
+	<?php if(!empty($_GET['test'])&&file_exists($_GET['test']."/index.html")) { header("Location: ".$_GET['test']."/index.html"); }?>
+	<a href="sys_eng/">Системотехника</a>
+</body>

@@ -1,0 +1,9 @@
+{
+	"question":"text",
+	"id":"filename",
+	"difficulty":"integer 1 to 3",
+	"type":"radio/checkbox",
+	"answers":[
+		{"text":"text", "id":"integer", "result":"double 0 to 1"}
+	]
+}

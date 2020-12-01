@@ -1,0 +1,12 @@
+{
+	"question":"easy_6",
+	"id":"easy_6",
+	"difficulty":"1",
+	"type":"checkbox",
+	"answers":[
+		{"text":"Верно", "id":"0", "result":"0.5"},
+		{"text":"Правильно", "id":"1", "result":"0.5"},
+		{"text":"3", "id":"2", "result":"-0.1"},
+		{"text":"4", "id":"3", "result":"-0.1"}
+	]
+}

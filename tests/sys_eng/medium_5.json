@@ -1,0 +1,12 @@
+{
+	"question":"medium_5",
+	"id":"medium_5",
+	"difficulty":"2",
+	"type":"checkbox",
+	"answers":[
+		{"text":"1", "id":"0", "result":"-0.1"},
+		{"text":"++", "id":"1", "result":"0.34"},
+		{"text":"++", "id":"2", "result":"0.34"},
+		{"text":"++", "id":"3", "result":"0.34"}
+	]
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Соты</title>
+        <style>
+            html,body{margin:0;padding:0;}
+            *{box-sizing:border-box;}
+            .honeycomb{
+                width: 200px;
+                height: 180px;
+                clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+                position: absolute;
+                transition: all ease-out 0.3s 0s;
+            }
+            .honeycomb:hover{transform: translate(-5px,-5px); width: 210px; height: 190px; z-index:2; transition: all ease-out 0.1s 0s;}
+            #hc-1{background:#f00;top:0px;left:0px;}
+            #hc-2{background:#f90;top:180px;left:0px;}
+            #hc-3{background:#ff0;top:360px;left:0px;}
+            #hc-4{background:#9f0;top:540px;left:0px;}
+            #hc-5{background:#0f0;top:720px;left:0px;}
+            #hc-6{background:#0f9;top:900px;left:0px;}
+            #hc-7{background:#0ff;top:90px;left:150px;}
+            #hc-8{background:#09f;top:270px;left:150px;}
+            #hc-9{background:#00f;top:450px;left:150px;}
+            #hc-10{background:#90f;top:630px;left:150px;}
+            #hc-11{background:#f0f;top:810px;left:150px;}
+            #hc-12{background:#f09;top:990px;left:150px;}
+            #honeycomb-container{position:relative;height:1170px;width:350px;margin:auto;}
+            @media screen and (min-width: 500px){
+                #hc-1{top:90px;left:0px;}
+                #hc-2{top:270px;left:0px;}
+                #hc-3{top:450px;left:0px;}
+                #hc-4{top:630px;left:0px;}
+                #hc-5{top:0px;left:150px;}
+                #hc-6{top:180px;left:150px;}
+                #hc-7{top:360px;left:150px;}
+                #hc-8{top:540px;left:150px;}
+                #hc-9{top:90px;left:300px;}
+                #hc-10{top:270px;left:300px;}
+                #hc-11{top:450px;left:300px;}
+                #hc-12{top:630px;left:300px;}
+                #honeycomb-container{height:810px;width:500px;margin:auto;}
+            }
+            @media screen and (min-width: 650px){
+                #hc-1{top:0px;left:0px;}
+                #hc-2{top:180px;left:0px;}
+                #hc-3{top:360px;left:0px;}
+                #hc-4{top:90px;left:150px;}
+                #hc-5{top:270px;left:150px;}
+                #hc-6{top:450px;left:150px;}
+                #hc-7{top:0px;left:300px;}
+                #hc-8{top:180px;left:300px;}
+                #hc-9{top:360px;left:300px;}
+                #hc-10{top:90px;left:450px;}
+                #hc-11{top:270px;left:450px;}
+                #hc-12{top:450px;left:450px;}
+                #honeycomb-container{height:630px;width:650px;margin:auto;}
+            }
+            @media screen and (min-width: 800px){
+                #hc-1{top:90px;left:0px;}
+                #hc-2{top:270px;left:0px;}
+                #hc-3{top:0px;left:150px;}
+                #hc-4{top:180px;left:150px;}
+                #hc-5{top:360px;left:150px;}
+                #hc-6{top:90px;left:300px;}
+                #hc-7{top:270px;left:300px;}
+                #hc-8{top:0px;left:450px;}
+                #hc-9{top:180px;left:450px;}
+                #hc-10{top:360px;left:450px;}
+                #hc-11{top:90px;left:600px;}
+                #hc-12{top:270px;left:600px;}
+                #honeycomb-container{height:540px;width:800px;margin:auto;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Эта штука перед сотами</h1>
+        <div id="honeycomb-container">
+            <div id="hc-1" class="honeycomb"></div>
+            <div id="hc-2" class="honeycomb"></div>
+            <div id="hc-3" class="honeycomb"></div>
+            <div id="hc-4" class="honeycomb"></div>
+            <div id="hc-5" class="honeycomb"></div>
+            <div id="hc-6" class="honeycomb"></div>
+            <div id="hc-7" class="honeycomb"></div>
+            <div id="hc-8" class="honeycomb"></div>
+            <div id="hc-9" class="honeycomb"></div>
+            <div id="hc-10" class="honeycomb"></div>
+            <div id="hc-11" class="honeycomb"></div>
+            <div id="hc-12" class="honeycomb"></div>
+        </div>
+        <h1>Эта штука после сот</h1>
+    </body>
+</html>
