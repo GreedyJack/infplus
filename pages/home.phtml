@@ -1,0 +1,79 @@
+<div id="templateContainer">
+	<div class="newscard card">
+		<div class="newscard-header centered">
+			<h1></h1>
+		</div>
+		<hr class="horizontal-separator" />
+		<div class="newscard-content clear-float">
+		</div>
+		<hr class="horizontal-separator" />
+		<div class="newscard-footer">
+			<div class="left">
+				<span class="pagination-book" title="Еще новости" onclick="switchNews('newer')"><img src="/pictures/pagination-left.png"></span><span class="pagination-book" title="Еще новости" onclick="switchNews('older')"><img src="/pictures/pagination-right.png"></span>
+			</div><div class="right"></div>
+		</div>
+	</div>
+</div>
+
+<script>setTitle("Главная");</script>
+<h1 class="centered">Добро пожаловать на сайт</h1>
+<h2 class="centered">ЧОУ ДПО "УМЦ Информатика-Плюс"</h2>
+<br/>
+<div id="newsbar"></div>
+<br/>
+<script>
+requestDataFileContents(setNews, "news");
+var bar = document.getElementById("newsbar");
+bar.addEventListener("touchstart",newsbarTstart);
+bar.addEventListener("touchend",newsbarTend);
+</script>
+<div class="flex-stretch-medium">
+	<div class="half-medium">
+			<p class="highlighted">Чем мы занимаемся?</p>
+			<ul class="checkbox-list">
+				<li>Обучаем слушателей различным компьютерным дисциплинам</li>
+				<li>Ремонтируем и настраиваем настольные компьютеры и ноутбуки</li>
+				<li>Прокладываем и поддерживаем локальные сети</li>
+				<li>Занимаемся продажей и установкой ПО</li>
+			</ul>
+	</div>
+	<div class="half-medium">
+		<p class="highlighted">Почему именно мы?</p>
+		<ul class="checkbox-list">
+			<li>Высокое качество передаваемых знаний</li>
+			<li>Качественный и быстрый ремонт и настройка</li>
+			<li>Низкие цены</li>
+			<li>Опыт работы более 25 лет</li>
+		</ul>
+	</div>
+</div>
+<div class="flex-stretch-medium flex-wrap" style="overflow: hidden;">
+	<div class="showcase card">
+		<img src="/pictures/pc-classes.jpg" />
+		<div class="textarea">
+			<a href="/?p=classes"><h4 class="centered">Учебные курсы</h4></a>
+			<p>Компьютерные учебные курсы различных направлений.</p>
+		</div>
+	</div>
+	<div class="showcase card">
+		<img src="/pictures/pc-repair.jpg" />
+		<div class="textarea">
+			<a href="/?p=services#pc-repairs"><h4 class="centered">Ремонт ПК</h4></a>
+			<p>Ремонт и настройка настольных компьютеров и ноутбуков.</p>
+		</div>
+	</div>
+	<div class="showcase card">
+		<img src="/pictures/pc-soft.jpg" />
+		<div class="textarea">
+			<a href="/?p=software"><h4 class="centered">Продажа ПО</h4></a>
+			<p>Продажа и установка программного обеспечения различных компаний.</p>
+		</div>
+	</div>
+	<div class="showcase card">
+		<img src="/pictures/cables.jpg" />
+		<div class="textarea">
+			<a href="/?p=services#lan-setup"><h4 class="centered">Настройка ЛВС</h4></a>
+			<p>Настройка и поддержка локальных вычислительных сетей для юридических и физических лиц.</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+table { width: 100%; }
+table, th, tr, td { border-collapse: collapse; }
+td, th { padding: 8px 20px; border-top: 2px solid grey; border-bottom: 2px solid grey; border-right: 1px solid #CACACA; border-left: 1px solid #CACACA; }
+.old-app { color: #808080; background-color: #DDDDDD; }
+[data-mdel=true] { color: red; background-color: #E6AFAF; }

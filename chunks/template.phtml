@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<noscript><meta http-equiv="refresh" content="0; URL='/noscript.html'" /></noscript>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Официальный сайт ЧОУ ДПО &quot;УМЦ Информатика-Плюс&quot;. Мы предлагаем обучение компьютерным технологиям по различным направлениям. Профессиональное обучение и многолетний опыт - гарантия Вашего успеха!" />
+	<meta name="keywords" content="информатика, компьютер, ремонт, учеба, обучение, образование, курсы, компьютерные курсы" />
+	<!-- Шрифт Open Sans -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!-- Внешний вид страницы -->
+	<link rel="stylesheet" href="/stylesheets/skin.css" />
+	<!-- Анимация страницы -->
+	<link rel="stylesheet" href="/stylesheets/anim.css" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89580380-1"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+  	gtag('config', 'UA-89580380-1');
+	</script>
+	<!-- Глифы FontAwesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+	<!-- Структурный скрипт страницы -->
+	<script src="/scripts/pager.js"></script>
+	<!-- Скрипт запросов к серверу -->
+	<script src="/scripts/requestor.js"></script>
+	<title>: Информатика-Плюс</title>
+</head>
+<body>
+	<div id="pWrapper">
+		<div id="navbar" class="hide-small-block">
+			<div id="navbarContent">
+				<div class="hide-ml" style="text-align: right;"><span class="closebtn" onClick="toggleMenu(navbar, 'off')">&times;</span></div>
+				<!-- Содержимое панели навигации, выравнивание - центр, собирается автоматически -->
+				<?php include("chunks/navbar.php"); ?>
+			</div>
+		</div>
+		<header>
+			<div id="header">
+				<div id="navbutton" class="fa-lg">
+				  <a class="navbutton animated shadow" href="tel:+79887620626" title="Позвоните нам"><span class="navbutton-padding"><span class="fas fa-phone fa-fw"></span></span></a>
+				  <a class="navbutton animated shadow" href="mailto:iplus@km.ru" title="Напишите нам"><span class="navbutton-padding"><span class="fas fa-envelope fa-fw"></span></span></a>
+				  <a class="navbutton animated shadow" href="https://n.maps.yandex.ru/#!/objects/2127356270?z=18&ll=37.782212%2C44.701430&l=nk%23sat" target="_blank" title="Приходите к нам"><span class="navbutton-padding"><span class="fas fa-map-marker-alt fa-fw" data-fa-transform="shrink-8" data-fa-mask="fas fa-map"></span></span></a>
+				  <span class="navbutton hide-ml shadow" onClick="toggleMenu(navbar, 'on')"><span class="navbutton-padding"><span class="fas fa-bars fa-fw"></span></span></span>
+			  </div>
+				<div id="caption">
+					<h1>Информатика-Плюс</h1>
+					<h3>Ваш компьютерный помощник</h3>
+				</div>
+			</div>
+			<script>setHeaderImage();</script>
+		</header>
+		<main>
+			<div id="citebar">
+				<i></i><span style="margin-right: 25px;"> - </span><br/><strong></strong>
+				<script>requestDataFileContents(setCitation, "cites");</script>
+				<hr class="horizontal-separator" />
+			</div>
+			<div id="content">
+				<div id="content-limiter">
+				<?php
+				$pnode = "home";
+				if(isset($_GET["p"])) { $pnode = $_GET["p"]; }
+				if (file_exists("pages/$pnode.phtml")) { include("pages/$pnode.phtml"); }
+				else { header("Location: 404.html"); }
+				?>
+				</div>
+			</div>
+		</main>
+		<br style="font-size: 30px;"/>
+		<footer>
+			<hr class="horizontal-separator" style="margin: auto 10px;" />
+			<div id="footerTopRow" class="flex-stretch-medium">
+				<div class="half-medium centered padding-top" id="links">
+					<h4>Ссылки</h4>
+					<p><a href="/?p=enform">Записаться на курсы</a></p>
+					<p><a href="/?p=sendreview">Оставить отзыв</a></p>
+					<p><?php 
+					if(!isset($_SESSION["ID"])) { 
+						echo "<a href='/login.phtml?ref=home'>Войти на сайт</a>"; 
+					} 
+					else { if($_SESSION["ROLE"]==="admin"){ echo "<a href='/admin/?p=home'>Панель администратора</a>"; } } ?></p>
+				</div><div class="half-medium centered padding-top" id="contacts">
+					<h4>Контакты</h4>
+					<p><strong>Адрес: </strong><a href='https://n.maps.yandex.ru/#!/objects/2127356270?z=18&ll=37.782212%2C44.701430&l=nk%23sat' target='_blank'>г.&nbsp;Новороссийск, ул.&nbsp;Черняховского,&nbsp;17</a></p>
+					<p><strong>Телефон: </strong><a href="tel:+79887620626">+7(9887)620-626</a></p>
+					<p><strong>E-mail: </strong><a href="mailto:iplus@km.ru">iplus@km.ru</a></p>
+				</div>
+			</div>
+			<div id="footerBottomRow">
+				<p class="small">Сайт информатикаплюс.рф использует файлы cookie для автоматического сбора анонимной пользовательской информации. Используя сайт, вы автоматически соглашаетесь с нашей <a href="/privacy-policy.html">Политикой&nbsp;конфиденциальности</a>.</p>
+				<p class="small pale">Вся информация, предоставленная на сайте, доступна для копирования и использования с указанием ссылки на сайт. Все изображения и глифы, размещенные на сайте, взяты из открытых источников.</p>
+				<p class="small pale">&copy; ЧОУ ДПО "УМЦ Информатика-Плюс", 1992-<?php echo date("Y"); ?></p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

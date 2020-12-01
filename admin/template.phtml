@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<noscript><meta http-equiv="refresh" content="0; URL='/noscript.html'" /></noscript>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Шрифт Open Sans -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!-- Внешний вид страницы -->
+	<link rel="stylesheet" href="/stylesheets/skin.css" />
+	<!-- Анимация страницы -->
+	<link rel="stylesheet" href="/stylesheets/anim.css" />
+	<!-- Дополнительные стили для панели администратора -->
+	<link rel="stylesheet" href="/stylesheets/admin.css" />
+	<!-- Глифы FontAwesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+	<!-- Структурный скрипт страницы -->
+	<script src="/scripts/pager.js"></script>
+	<!-- Скрипт запросов к серверу -->
+	<script src="/scripts/requestor.js"></script>
+	<title>: Информатика-Плюс</title>
+</head>
+<body>
+	<div id="pWrapper">
+		<div id="adminNavbar">
+			<div id="navbarContent">
+				<div class="hide-ml" style="text-align: right;"><span class="closebtn" onClick="toggleMenu(navbar, 'off')">&times;</span></div>
+				<!-- Содержимое панели навигации, выравнивание - центр, собирается автоматически -->
+				<a class="navbar-element" href="/?p=home">На сайт</a>
+			</div>
+		</div>
+		<header>
+			<div id="adminHeader">
+				
+			</div>
+		</header>
+		<main>
+			<div id="content">
+				<div id="content-limiter">
+				<?php
+				$pnode = "home";
+				if(isset($_GET["p"])) { $pnode = $_GET["p"]; }
+				if (file_exists("$pnode.phtml")) { include("$pnode.phtml"); }
+				else { header("Location: 404.html"); }
+				?>
+				</div>
+			</div>
+		</main>
+		<br style="font-size: 30px;"/>
+		<footer>
+			<hr class="horizontal-separator" style="margin: auto 10px;" />
+			<div id="footerTopRow" class="flex-stretch-medium">
+				<div class="half-medium centered padding-top" id="links">
+					<h4>Ссылки</h4>
+					<p><a href="/admin">Панель администратора: Главная</a></p>
+					<p><a href="/admin/?p=applications">Список заявок</a></p>
+				</div><div class="half-medium centered padding-top" id="contacts">
+					<h4>Заголовок</h4>
+				</div>
+			</div>
+			<div id="footerBottomRow">
+				<p class="small pale">&copy; ЧОУ ДПО "УМЦ Информатика-Плюс", 1992-<?php echo date("Y"); ?></p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

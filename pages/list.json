@@ -1,0 +1,8 @@
+{
+	"home":{ "title":"Главная", "node":"home", "published":"true", "parent":"root" },
+	"classes":{ "title":"Курсы", "node":"classes", "published":"true", "parent":"root" },
+	"services":{ "title":"Услуги", "node":"services", "published":"true", "parent":"root" },
+	"software":{ "title":"Софт", "node":"software", "published":"true", "parent":"root" },
+	"handbook":{ "title":"Справочник", "node":"handbook", "published":"false", "parent":"root" },
+	"about":{ "title":"О нас", "node":"about", "published":"true", "parent":"root" }
+}

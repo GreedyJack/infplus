@@ -1,0 +1,19 @@
+<div id="templateContainer">
+  <div class="accordion" onMouseEnter="pullAccordion(this)" onMouseLeave="pushAccordion(this)">
+  	<div class="accordion-header" onClick="toggleAccordion(this, 'self')">
+  		<p>Гармошка</p>
+  		<span class="fas fa-chevron-circle-down accordion-toggle-glyph"></span>
+  	</div>
+  	<div class="accordion-content hidden"></div>
+	  <div class="accordion-content-placeholder"></div>
+	  <div class="accordion-footer"></div>
+  </div>
+</div>
+
+<script>setTitle("Курсы");</script>
+<h1 class="centered">Учебные курсы</h1>
+<p class="margin-top-botom">За время нашего существования мы обучили тысячи студентов различным дисциплинам, связанным с компьютерными технологиями. Неважно, вы только собираетесь научиться работе с компьютером или вы уже знаете его устройство до мелочей, мы всегда рады поделиться с вами чем-то новым в ходе одного из нижеперечисленных курсов.</p>
+<div id="accordionSet"></div>
+<script>requestDataFileContents(processClassesList,"classes");</script>
+<p class="margin-top-bottom">По окончании курсов всем слушателям выдается свидетельство об окончании курсов установленного государственного образца. Но самое главное, что от нас получают наши слушатели - это багаж знаний, который может быть использован в дальнейшем для достижения успехов в любой сфере деятельности.</p>
+<br/>

@@ -1,0 +1,52 @@
+<script>setTitle("Панель администратора");</script>
+<h1>Отзывы</h1>
+<h2>С хорошей оценкой</h2>
+<table id="goodreviews">
+    <tr><th>Имя</th><th>Отзыв</th><th>Оценка</th><th>Дата</th><th>Управление</th></tr>
+</table>
+<h2>С плохой оценкой</h2>
+<table id="badreviews">
+    <tr><th>Имя</th><th>Отзыв</th><th>Оценка</th><th>Дата</th><th>Управление</th></tr>
+</table>
+<script>
+    requestReviews();
+    function requestReviews(){
+        "use strict";
+        var request = {action:"get all",targetFile:"/data/private/reviews/good.json"}
+        sendRequestToServerHandler("backbone/requestHandler.php",goodReviews, JSON.stringify(request));
+    }
+    function goodReviews(data){
+        "use strict";
+        fillReviews(document.getElementById("goodreviews"),data);
+        var request = {action:"get all",targetFile:"/data/private/reviews/bad.json"}
+        sendRequestToServerHandler("backbone/requestHandler.php",badReviews, JSON.stringify(request));
+    }
+    function badReviews(data){
+        "use strict";
+        fillReviews(document.getElementById("badreviews"),data);
+    }
+    function fillReviews(table, data){
+        "use strict";
+        for(var i=0; i<data.length; i++){
+            var record = document.createElement("tr");
+            table.appendChild(record);
+            var field = document.createElement("td");
+            field.innerText = data[i].name;
+            record.appendChild(field);
+            field = document.createElement("td");
+            field.innerText = data[i].review;
+            record.appendChild(field);
+            field = document.createElement("td");
+            field.innerText = data[i].rating;
+            record.appendChild(field);
+            field = document.createElement("td");
+            var d = new Date(data[i].regDate);
+            var dopt = {day:"numeric",month:"numeric",year:"numeric"};
+		    field.innerText = d.toLocaleString("ru",dopt);
+            record.appendChild(field);
+            field = document.createElement("td");
+            field.innerText = "Добавить!";
+            record.appendChild(field);
+        }
+    }
+</script>

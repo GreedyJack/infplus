@@ -1,0 +1,39 @@
+<script>setTitle("Оставить отзыв");</script>
+<div id="form">
+    <label for="reviewer">Представьтесь, пожалуйста</label><br/>
+    <input id="reviewer" class="form-textfield form-input-wide" type="text" placeholder="Иван Иванов" /><br/>
+    <span>Оцените, пожалуйста, нашу работу</span><br/>
+    <div id="rating" data-rated="no">
+        <svg width="25" viewbox="0 0 51 48" data-index="1" onmouseenter="lightStars(this)" onmouseleave="turnOffStars()" onclick="rate(this)"><use xlink:href="/pictures/Five-pointed_star.svg#star"></svg><svg width="25" viewbox="0 0 51 48" data-index="2" onmouseenter="lightStars(this)" onmouseleave="turnOffStars()" onclick="rate(this)"><use xlink:href="/pictures/Five-pointed_star.svg#star"></svg><svg width="25" viewbox="0 0 51 48" data-index="3" onmouseenter="lightStars(this)" onmouseleave="turnOffStars()" onclick="rate(this)"><use xlink:href="/pictures/Five-pointed_star.svg#star"></svg><svg width="25" viewbox="0 0 51 48" data-index="4" onmouseenter="lightStars(this)" onmouseleave="turnOffStars()" onclick="rate(this)"><use xlink:href="/pictures/Five-pointed_star.svg#star"></svg><svg width="25" viewbox="0 0 51 48" data-index="5" onmouseenter="lightStars(this)" onmouseleave="turnOffStars()" onclick="rate(this)"><use xlink:href="/pictures/Five-pointed_star.svg#star"></svg>
+    </div>
+    <div id="ratingIE" class="hidden"><input type="radio" data-index="1" name="ratethis" onclick="rate(this)"><span style="margin-right: 2em;">1</span><input type="radio" data-index="2" name="ratethis" onclick="rate(this)"><span style="margin-right: 2em;">2</span><input type="radio" data-index="3" name="ratethis" onclick="rate(this)"><span style="margin-right: 2em;">3</span><input type="radio" data-index="4" name="ratethis" onclick="rate(this)"><span style="margin-right: 2em;">4</span><input type="radio" data-index="5" name="ratethis" onclick="rate(this)"><span style="margin-right: 2em;">5</span></div>
+    <label for="review">Поделитесь Вашим мнением. <span class="small pale">Символов осталось: <span id="symbolsleft">500</span></span></label><br/>
+    <textarea id="review" class="form-textfield form-input-wide" style="font-size: 1.3em;" rows="10" maxlength="500" oninput="document.getElementById('symbolsleft').innerText = 500 - this.value.length;"></textarea><br/>
+    <br/><button id="submit" class="shadow" onclick="sendReview()">Оставить отзыв</button><span class="small pale" style="margin-left: 10px;">Ваш отзыв будет опубликован после проверки модератором</span>
+  </div>
+  <script>
+    if(navigator.userAgent.indexOf("Trident")!==-1){
+        document.getElementById("rating").classList.add("hidden");
+        document.getElementById("ratingIE").classList.remove("hidden");
+    }
+    function turnOffStars(){
+        "use strict";
+        var rating = document.getElementById("rating").getAttribute("data-rated");
+        var stars = document.querySelectorAll("#rating svg");
+        if(rating=="no") for(var i=0; i<stars.length; i++){ stars[i].classList.remove("selected"); }
+        else for(var i=parseInt(rating); i<stars.length; i++){ stars[i].classList.remove("selected"); }
+    }
+    function lightStars(sender){
+      "use strict";
+      var index = sender.getAttribute("data-index");
+      var stars = document.querySelectorAll("#rating svg");
+      for(var i=0; i<parseInt(index,10); i++){ stars[i].classList.add("selected"); }
+    }
+    function rate(sender){
+      "use strict";
+      document.getElementById("rating").setAttribute("data-rated", sender.getAttribute("data-index"));
+      var stars = document.querySelectorAll("#rating svg");
+      for(var i=0; i<stars.length; i++) { stars[i].classList.remove("selected"); }
+      for(var i=0; i<parseInt(sender.getAttribute("data-index")); i++) { stars[i].classList.add("selected"); }
+    }
+  </script>

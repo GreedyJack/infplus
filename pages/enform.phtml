@@ -1,0 +1,52 @@
+<script>setTitle("Форма записи");</script>
+<h1 class="centered">Форма записи на курсы</h1>
+<div id="form">
+	<p class="margin-top-bottom small pale"><i>Поля, отмеченные знаком<span class="input-required"></span>, обязательны для заполнения.</i></p>
+		<label class="small input-required" for="lname">Фамилия</label><br/>
+		<input id="lname" class="form-textfield form-input-wide" type="text" placeholder="Иванов" required/><br/>
+		<label class="small input-required" for="fname">Имя</label><br/>
+		<input id="fname" class="form-textfield form-input-wide" type="text" placeholder="Иван" required/><br/>
+		<label class="small" for="patr">Отчество</label><br/>
+		<input id="patr" class="form-textfield form-input-wide" type="text" placeholder="Иванович"/><br/>
+		<label class="small input-required" for="tel">Контактный телефон</label><br/>
+		<input id="tel" class="form-textfield form-input-wide" type="tel" placeholder="+7(123)456-78-90" onblur="validatePhoneNumber(this.value);" required/><br/>
+		<div id="birthday" style="margin-top: 6px; margin-bottom: 8px;">
+			<label class="small">День рождения</label><br/>
+			<select id="day" class="form-textfield"></select>
+			<select id="month" class="form-textfield">
+				<option value="01" selected>Январь</option>
+				<option value="02">Февраль</option>
+				<option value="03">Март</option>
+				<option value="04">Апрель</option>
+				<option value="05">Май</option>
+				<option value="06">Июнь</option>
+				<option value="07">Июль</option>
+				<option value="08">Август</option>
+				<option value="09">Сентябрь</option>
+				<option value="10">Октябрь</option>
+				<option value="11">Ноябрь</option>
+				<option value="12">Декабрь</option>
+			</select>
+			<select id="year" class="form-textfield"></select>
+		</div>
+		<label class="small input-required" for="class">Учебный курс</label><br/>
+		<select id="class" class="form-textfield form-input-wide"></select><br/>
+		<script>fillDays(); fillYears(); requestDataFileContents(processClassesOptgroup,"classes");</script>
+		<div class="margin-top-bottom">
+			<fieldset class="no-margin no-border inline">
+				<legend class="small">Удобные дни недели</legend>
+				<input type="radio"  value="Любые дни" name="wd" id="ad" checked/><label class="label-for-radio" for="ad">Любые</label><br/>
+				<input type="radio"  value="Будни" name="wd" id="ld"/><label class="label-for-radio" for="ld">Будни</label><br/>
+				<input type="radio"  value="Выходные" name="wd" id="we"/><label class="label-for-radio" for="we">Выходные</label><br/>
+			</fieldset><br/>
+			<fieldset class="no-margin no-border inline">
+				<legend class="small">Удобное время</legend>
+				<input type="radio"  value="Любое время" name="dt" id="at" checked/><label class="label-for-radio" for="at">Любое</label><br/>
+				<input type="radio"  value="Утро" name="dt" id="mn"/><label class="label-for-radio" for="mn">Утро (до 13:00)</label><br/>
+				<input type="radio"  value="День" name="dt" id="nn"/><label class="label-for-radio" for="nn">День (13:00 - 17:00)</label><br/>
+				<input type="radio"  value="Вечер" name="dt" id="ev"/><label class="label-for-radio" for="ev">Вечер (после 17:00)</label><br/>
+			</fieldset>
+		</div>
+		<p class="margin-bottom pale small"><input type="checkbox" class="form-checkbox" id="approval" onchange="toggleApproval();" checked/> <label for="approval">Я даю свое согласие</label> ЧОУ ДПО "УМЦ Информатика-Плюс" на обработку моих персональных данных согласно их <a href="/privacy-policy.html">Политике&nbsp;конфиденциальности</a>.</p>
+		<button id="submit" class="shadow" onclick="sendApplication();">Записаться</button>
+</div>

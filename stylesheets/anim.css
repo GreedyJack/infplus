@@ -1,0 +1,62 @@
+@keyframes wobble 
+{
+	0% { transform: rotateZ(2deg); }
+	50% { transform: rotateZ(-2deg); }
+	100% { transform: rotateZ(2deg); }
+}
+@keyframes pulse-grow
+{
+	0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+	100% { transform: scale(1); }
+}
+@keyframes flipInHor
+{
+	from { opacity: 0; transform: rotateY(-90deg); }
+	to { opacity: 1; transform: rotateY(0deg); }
+}
+@keyframes flipOutHor
+{
+	from { opacity: 1; transform: rotateY(0deg); }
+	to { opacity: 0; transform: rotateY(-90deg); }
+}
+@keyframes slideOutLeft
+{
+	from { left: 0px; opacity: 1; }
+	to { left: -50%; opacity: 0; }
+}
+@keyframes slideOutRight
+{
+	from { right: 0px; opacity: 1; }
+	to { right: -50%; opacity: 0; }
+}
+@keyframes slideInLeft
+{
+	from { right: -50%; opacity: 0; }
+	to { right: 0px; opacity: 1; }
+}
+@keyframes slideInRight
+{
+	from { left: -50%; opacity: 0; }
+	to { left: 0px; opacity: 1; }
+}
+@keyframes fadeInAndUp
+{
+	from { bottom: -100%; opacity: 0; }
+	to { bottom: 0px; opacity: 1; }
+}
+@keyframes fadeOutAndDown
+{
+	from { bottom: 0px; opacity: 1; }
+	to { bottom: -100%; opacity: 0; }
+}
+.navbutton.animated:hover { animation: wobble 0.35s infinite; }
+.flip-in-horizontal { animation: flipInHor 0.5s 1; }
+.flip-out-horizontal { animation: flipOutHor 0.5s 1 forwards; }
+.slide-out-left, .slide-out-right, .slide-in-left, .slide-in-right { position: relative; }
+.slide-out-left { animation: slideOutLeft 0.35s 1 forwards; }
+.slide-out-right { animation: slideOutRight 0.35s 1 forwards; }
+.slide-in-left { animation: slideInLeft 0.35s 1; }
+.slide-in-right { animation: slideInRight 0.35s 1; }
+.snackbar.show { animation: fadeInAndUp 0.35s 1; }
+.snackbar.hide { animation: fadeOutAndDown 0.7s 1 forwards; }
